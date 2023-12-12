@@ -1,4 +1,9 @@
-const { createUserDb, geteAllUserDb, updateUserDb } = require("../repository/user.repository");
+const {
+  createUserDb,
+  geteAllUserDb,
+  updateUserDb,
+  deleteUserDb,
+} = require("../repository/user.repository");
 
 async function geteAllUser() {
   const data = await geteAllUserDb();
@@ -10,13 +15,18 @@ async function createUser(user) {
   return data;
 }
 
-async function updateUser(id_, user) {
+async function updateUser(_id, user) {
   const data = await updateUserDb(_id, user);
   return data;
 }
 
+async function deleteUser(_id) {
+  const data = await deleteUserDb(_id);
+  return data;
+}
 module.exports = {
   createUser,
   geteAllUser,
-  updateUser
+  updateUser,
+  deleteUser,
 };
