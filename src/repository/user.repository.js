@@ -1,7 +1,6 @@
 const { TableUser, ObjectId } = require("../../db");
 
 async function geteAllUserDb() {
-  await TableUser.create();
   const data = await TableUser.find();
   return data;
 }
