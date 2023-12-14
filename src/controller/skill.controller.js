@@ -3,6 +3,8 @@ const {
   getAllSkills,
   createSkill,
   getSkillsById,
+  updateSkill,
+  deleteSkill,
 } = require("../service/skill.service");
 const route = express.Router();
 
@@ -33,5 +35,22 @@ route.post("/", async (req, res) => {
   }
 });
 
+route.put("/:_id", async (req, res) => {
+  try {
+    const data = await updateSkill(req.params._id, req.body);
+    res.send(data);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
+route.delete("/:_id", async (req, res) => {
+  try {
+    const data = await deleteSkill(req.params._id);
+    res.send(data);
+  } catch (error) {
+    res.send(error.messege);
+  }
+});
 
 module.exports = route;
