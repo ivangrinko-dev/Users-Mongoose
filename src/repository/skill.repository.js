@@ -1,4 +1,4 @@
-const { TableSkills, ObjectId } = require("../../db");
+const { TableSkills, ObjectId } = require("../db");
 
 async function getAllSkillsDb() {
   const data = await TableSkills.find();

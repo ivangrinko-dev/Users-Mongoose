@@ -1,4 +1,4 @@
-const { TableUser, ObjectId } = require("../../db");
+const { TableUser, ObjectId } = require("../db");
 
 async function geteAllUserDb() {
   const data = await TableUser.find();
